@@ -6,13 +6,7 @@ Membangun gudang data (**data warehouse**) menggunakan skema bintang (**star sch
 ---
 
 ## 🔄 Alur Aliran Data
-CSV (insurance_with_random_dates.csv)
-↓
-Staging (staging)
-↓ [ETL SQL]
-Dimensi & Fakta (Data Warehouse)
-↓
-Power BI (Visualisasi)
+📁 CSV → 🧱 Staging → ⚙️ ETL SQL → 🗃️ Data Warehouse → 📊 Power BI
 
 Data dikumpulkan dari file CSV dan dimasukkan ke SQL Server melalui tabel staging. Setelah transformasi dan pembersihan, data dimuat ke tabel fakta dan dimensi, lalu divisualisasikan menggunakan Power BI.
 
