@@ -49,7 +49,7 @@ Visualisasi dibuat menggunakan Power BI Desktop:
 | Data Source   | CSV dataset dari Kaggle       |
 | Transformasi  | SQL query (CTE + Insert)      |
 
-## 👥 Anggota Kelompok
+## 👥 Anggota Kelompok 4 RA
 
 - Evan Aprianto – 121450024  
 - Kiwit Novitasari – 121450126  
