@@ -1,53 +1,78 @@
 # 📊 Data Warehouse Asuransi Kesehatan – Misi 3
 
 ## 🎯 Tujuan Proyek
-Membangun gudang data (data warehouse) menggunakan skema bintang (**star schema**) dan arsitektur **three-tier**, untuk menganalisis klaim asuransi kesehatan berdasarkan wilayah, status perokok, usia, dan waktu.
+Membangun gudang data (**data warehouse**) menggunakan skema bintang (**star schema**) dan arsitektur **three-tier**, untuk menganalisis klaim asuransi kesehatan berdasarkan wilayah, status perokok, usia, dan waktu.
+
+---
+
+## 🔄 Alur Aliran Data
+CSV (insurance_with_random_dates.csv)
+↓
+Staging (staging)
+↓ [ETL SQL]
+Dimensi & Fakta (Data Warehouse)
+↓
+Power BI (Visualisasi)
+
+Data dikumpulkan dari file CSV dan dimasukkan ke SQL Server melalui tabel staging. Setelah transformasi dan pembersihan, data dimuat ke tabel fakta dan dimensi, lalu divisualisasikan menggunakan Power BI.
+
+---
 
 ## 🏗️ Arsitektur Three-Tier
-1. **Staging Area**  
-   - Tabel: `staging`  
-   - Sumber: file CSV (`insurance_with_random_dates.csv`)  
-   - Tujuan: menyimpan data mentah dari file eksternal
 
-2. **Data Warehouse Layer**  
-   - Tabel fakta dan dimensi dalam skema bintang:
-     - `Fakta_Klaim_Asuransi`
-     - `Dim_Pelanggan`, `Dim_Waktu`, `Dim_Wilayah`
+### 1. **Staging Layer**
+- **Tabel**: `staging`
+- **Sumber**: `insurance_with_random_dates.csv`
+- **Fungsi**: menyimpan data mentah
 
-3. **Presentation Layer**  
-   - Alat: Power BI Desktop  
-   - Menampilkan dashboard analitik klaim asuransi (disimpan di `docs/dashboard BI.pdf`)
+### 2. **Data Warehouse Layer**
+- **Tabel Fakta**:
+  - `Fakta_Klaim_Asuransi`
+- **Tabel Dimensi**:
+  - `Dim_Pelanggan`, `Dim_Waktu`, `Dim_Wilayah`
+- **Fungsi**: menyimpan data yang telah dibersihkan dan siap dianalisis
 
-## 🔁 Proses ETL
+### 3. **Presentation Layer**
+- **Alat**: Power BI Desktop
+- **Fungsi**: menyajikan laporan analitik interaktif
+- **Output**: Lihat `docs/dashboard BI.pdf`
 
-1. Dataset asuransi (`insurance.csv`) ditambahkan kolom `tanggal_klaim`
-2. Data dimasukkan ke SQL Server ke dalam `staging`
-3. Data dibersihkan dan diolah ke dalam:
-   - `Dim_Pelanggan` (dari kolom age, sex, smoker)
-   - `Dim_Wilayah` (dari region)
-   - `Dim_Waktu` (dari tanggal_klaim)
-   - `Fakta_Klaim_Asuransi` (menggabungkan semua dimensi)
+---
 
-ETL dilakukan dengan query `WITH CTE` dan `INSERT INTO` yang terdokumentasi dalam `etl_script.sql`.
+## 🔁 ETL Pipeline (Extract, Transform, Load)
+
+1. **Extract**: Ambil data dari file CSV
+2. **Transform**: Bersihkan data, ubah format nilai, generate ID dengan CTE
+3. **Load**:
+   - Masukkan data ke `Dim_Pelanggan`, `Dim_Waktu`, `Dim_Wilayah`
+   - Gabungkan ke `Fakta_Klaim_Asuransi`
+
+📁 Lihat skrip ETL: [`sql/etl_script.sql`](sql/etl_script.sql)
+
+---
 
 ## 📊 Visualisasi
 
-Visualisasi dibuat menggunakan Power BI Desktop:
-- Jumlah klaim per wilayah
-- Rata-rata klaim per status perokok
-- Tren klaim bulanan
-- Distribusi klaim berdasarkan usia dan kategori BMI
+Dashboard dibangun menggunakan Power BI Desktop dengan grafik:
+- 📍 Jumlah klaim per wilayah
+- 🚬 Rata-rata klaim berdasarkan status perokok
+- 📈 Tren klaim bulanan
+- 👥 Distribusi klaim berdasarkan usia dan kategori BMI
 
-📎 Lihat hasil dashboard di `docs/dashboard BI.pdf`
+📎 Preview: [`docs/dashboard BI.pdf`](docs/dashboard%20BI.pdf)
+
+---
 
 ## 🛠️ Tools dan Teknologi
 
-| Tujuan        | Alat yang Digunakan           |
-|---------------|-------------------------------|
-| Database      | SQL Server Express + SSMS     |
-| Visualisasi   | Power BI Desktop              |
-| Data Source   | CSV dataset dari Kaggle       |
-| Transformasi  | SQL query (CTE + Insert)      |
+| Kebutuhan      | Alat yang Digunakan           |
+|----------------|-------------------------------|
+| Database       | SQL Server Express + SSMS     |
+| Visualisasi    | Power BI Desktop              |
+| Data Source    | Dataset Kaggle (`insurance.csv`) |
+| Transformasi   | SQL Query (`CTE`, `INSERT`)   |
+
+---
 
 ## 👥 Anggota Kelompok 4 RA
 
@@ -56,6 +81,8 @@ Visualisasi dibuat menggunakan Power BI Desktop:
 - Ibrahim Al-Kahfi – 122450100  
 - Meira Listyaningrum – 122450011  
 - Salwa Farhanatussaidah – 122450055
+
+---
 
 ## 🔗 Referensi
 
