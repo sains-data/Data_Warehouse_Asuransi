@@ -18,30 +18,6 @@ Membangun gudang data (data warehouse) menggunakan skema bintang (**star schema*
    - Alat: Power BI Desktop  
    - Menampilkan dashboard analitik klaim asuransi (disimpan di `docs/dashboard BI.pdf`)
 
-## 📦 Struktur Repository
-
-├── data/
-│ └── insurance_with_random_dates.csv
-│
-├── docs/
-│ ├── dashboard BI.pdf
-│ └── star_schema_diagram.png
-│
-├── sql/
-│ ├── etl_script.sql
-│ ├── schema_star.sql
-│ └── staging.sql
-│
-└── README.md
-
-
-- `data/` – Dataset hasil preprocessing dengan kolom `tanggal_klaim`
-- `docs/` – Laporan dashboard Power BI & diagram skema bintang
-- `sql/` – Skrip SQL:
-  - `staging.sql`: membuat tabel staging
-  - `schema_star.sql`: membuat tabel dimensi & fakta
-  - `etl_script.sql`: ETL dari staging ke data warehouse
-
 ## 🔁 Proses ETL
 
 1. Dataset asuransi (`insurance.csv`) ditambahkan kolom `tanggal_klaim`
