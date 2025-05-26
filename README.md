@@ -101,7 +101,7 @@ Implementasi data warehouse dilakukan dengan langkah-langkah berikut:
 Data warehouse yang telah diimplementasikan berhasil menyediakan platform terstruktur untuk analisis data biaya asuransi. Data dari sumber telah berhasil dimuat dan ditransformasi sesuai dengan desain.
 
 * **Tampilan Sistem/Visualisasi (Contoh menggunakan Power BI):**
-    ![Dasbor Power BI - Penjualan per Wilayah](images/dashboard biaya asuransi.jpg)
+    ![Dasbor Power BI - Penjualan per Wilayah(images/dashboard_biaya_asuransi.jpg)
     * ➡️ *[Sertakan beberapa screenshot menarik dari dasbor atau laporan Power BI yang telah Anda buat. Misalnya: "Visualisasi Total Biaya per Wilayah", "Distribusi Pelanggan berdasarkan Kategori BMI dan Status Merokok".
 * **Fungsionalitas Data Warehouse yang Tercapai:**
     * Kemampuan untuk melakukan query agregat untuk menganalisis biaya (`Charges`).
