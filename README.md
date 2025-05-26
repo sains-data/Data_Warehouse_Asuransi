@@ -51,6 +51,7 @@ Analisis kebutuhan berfokus pada identifikasi stakeholder utama dan tujuan bisni
 ## 🏗️ Desain Data Warehouse (Misi 2 & 3)
 
 Desain data warehouse ini mengadopsi **Skema Bintang (Star Schema)** untuk optimalisasi query analitik dan kemudahan pemahaman.
+![Diagram Star Schema](images/Star_schema.png)
 
 * **Desain Konseptual (Misi 2):**
     * **Tabel Fakta:** `FactInsuranceCharges` (menyimpan metrik `Charges`).
@@ -101,14 +102,11 @@ Implementasi data warehouse dilakukan dengan langkah-langkah berikut:
 Data warehouse yang telah diimplementasikan berhasil menyediakan platform terstruktur untuk analisis data biaya asuransi. Data dari sumber telah berhasil dimuat dan ditransformasi sesuai dengan desain.
 
 * **Tampilan Sistem/Visualisasi (Contoh menggunakan Power BI):**
-    ![Dasbor Power BI - Penjualan per Wilayah(images/dashboard_biaya_asuransi.jpg)
-    * ➡️ *[Sertakan beberapa screenshot menarik dari dasbor atau laporan Power BI yang telah Anda buat. Misalnya: "Visualisasi Total Biaya per Wilayah", "Distribusi Pelanggan berdasarkan Kategori BMI dan Status Merokok".
+    ![Dasbor Power BI - Penjualan per Wilayah](images/dashboard_biaya_asuransi.jpg)
 * **Fungsionalitas Data Warehouse yang Tercapai:**
     * Kemampuan untuk melakukan query agregat untuk menganalisis biaya (`Charges`).
     * Kemampuan untuk melakukan segmentasi pelanggan berdasarkan demografi, wilayah, profil BMI, dan jumlah anak.
     * Data telah terintegrasi dan siap untuk mendukung pembuatan laporan analitik.
-* **Contoh Output Kueri Analitik:**
-    * ➡️ *[Contoh: "Berdasarkan kueri analisis, wilayah 'XYZ' memiliki total biaya tertinggi, sedangkan kelompok usia 'ABC' memiliki rata-rata biaya terendah." Atau tampilkan cuplikan hasil dari salah satu kueri di `analysis_queries.sql`]*
 
 ## 👥 Tim Proyek
 
