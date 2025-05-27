@@ -108,15 +108,15 @@ Data warehouse yang telah diimplementasikan berhasil menyediakan platform terstr
     * Kemampuan untuk melakukan segmentasi pelanggan berdasarkan demografi, wilayah, profil BMI, dan jumlah anak.
     * Data telah terintegrasi dan siap untuk mendukung pembuatan laporan analitik.
 
-## 👥 Tim Proyek
+## Tim Proyek
 
 Proyek ini dikerjakan oleh **Kelompok 4**:
 
 * Evan Aprianto (121450024)
 * Kiwit Novitasari (121450126)
-* Ibrahin Al-Kahfi (122450100)
 * Meira Listyaningrum (122450011)
 * Salwa Farhanatussaidah (122450055)
+* Ibrahim Al-Kahfi (122450100)
 
 ---
 
@@ -124,6 +124,10 @@ Proyek ini dikerjakan oleh **Kelompok 4**:
 * Dataset Asuransi (Insurance.csv) diambil dari: [Kaggle: Medical Cost Personal Datasets](https://www.kaggle.com/datasets/mirichoi0218/insurance)
 
 **Struktur Repository:**
+* `/Misi 1/`: Berisi file dan laporan terkait Misi 1 proyek
+* `/Misi 2/`: Berisi file dan laporan terkait Misi 2 proyek
+* `/Misi 3/`: Berisi file dan laporan terkait Misi 3 proyek
+* `/Misi 4/`: Berisi file dan laporan terkait Misi 4 proyek
 * `/sql_scripts/`: Berisi semua skrip SQL (DDL, DML, Kueri Analitik).
 * `/data/`: Berisi dataset sumber `insurance.csv`.
 * `/docs/`: Berisi laporan-laporan proyek per misi.
